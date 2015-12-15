@@ -16,8 +16,7 @@ module.exports = {
 
   execute: function(stage) {
 
-    //let seconds = stage.option('length')
-    let seconds = 3
+    let seconds = stage.option('length')
 
     stage.log('Beginning pause for ' + seconds +' seconds')
 
