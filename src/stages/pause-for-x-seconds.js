@@ -16,12 +16,16 @@ module.exports = {
 
   execute: function(stage) {
 
-    let seconds = stage.getOption('length')
+    //let seconds = stage.option('length')
+    let seconds = 3
+
+    stage.log('Beginning pause for ' + seconds +' seconds')
+
 
     setTimeout(() => {
 
-      stage.log(new BasicLog('Paused for ' + seconds +' seconds'))
-      stage.markAsSuccessful()
+      stage.log('Finished pause for ' + seconds +' seconds')
+      stage.succeed()
 
     }, seconds * 1000)
 
