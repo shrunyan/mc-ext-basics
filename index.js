@@ -8,6 +8,6 @@ module.exports = {
     pause_execution_for_x_seconds: require('./src/stages/pause-for-x-seconds')
   },
   logs: {
-    basic: require('./src/logs/basic')
+    snippet: require('./src/logs/snippet')
   }
 }
