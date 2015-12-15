@@ -17,7 +17,7 @@ module.exports = {
     let seconds = stage.option('length')
 
     stage.log('Beginning pause for ' + seconds +' seconds')
-    
+
     setTimeout(() => {
       stage.log('Finished pause for ' + seconds +' seconds')
       stage.succeed()
