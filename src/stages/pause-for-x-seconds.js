@@ -1,7 +1,5 @@
 'use strict'
 
-let BasicLog = require('../logs/basic')
-
 module.exports = {
 
   name: 'pause_execution_for_x_seconds',
