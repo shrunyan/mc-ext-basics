@@ -17,14 +17,14 @@ module.exports = {
     timeout: {
       required: true,
       type: 'text',
-      default: 600000 // 10 minutes
+      default: 600 // 10 minutes
     }
   },
 
   execute: function(stage) {
 
     let commands = stage.option('commands')
-    let timeout = stage.option('timeout')
+    let timeout = stage.option('timeout') * 1000 // convert seconds to milliseconds
 
     stage.log('Running shell command')
 
