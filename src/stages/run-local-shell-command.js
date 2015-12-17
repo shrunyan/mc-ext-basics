@@ -24,7 +24,7 @@ module.exports = {
 
     exec(commands, function (err, stdout, stderr) {
 
-      let exitCode = (err !== null) ? 0 : err.code
+      let exitCode = (err !== null) ? err.code : 0
 
       stage.log(new ShellCommandLog('Local shell command execution completed.', stdout, stderr, exitCode))
 
