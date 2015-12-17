@@ -13,16 +13,22 @@ module.exports = {
     commands: {
       required: true,
       type: 'textarea'
+    },
+    timeout: {
+      required: true,
+      type: 'text',
+      default: 600000 // 10 minutes
     }
   },
 
   execute: function(stage) {
 
     let commands = stage.option('commands')
+    let timeout = stage.option('timeout')
 
     stage.log('Running shell command')
 
-    exec(commands, function (err, stdout, stderr) {
+    exec(commands, {timeout: timeout}, function (err, stdout, stderr) {
 
       let exitCode = (err !== null) ? err.code : 0
 
