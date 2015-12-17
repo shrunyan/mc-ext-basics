@@ -1,6 +1,5 @@
 'use strict'
 
-let sys = require('sys')
 let exec = require('child_process').exec
 let ShellCommandLog = require('../logs/shell-command').ShellCommandLog
 
