@@ -28,6 +28,12 @@ module.exports = {
 
       stage.log(new ShellCommandLog('Local shell command execution completed.', stdout, stderr, exitCode))
 
+      if (err !== null) {
+        stage.fail()
+      } else {
+        stage.succeed()
+      }
+
     })
 
   }
