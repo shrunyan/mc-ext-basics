@@ -11,10 +11,12 @@ module.exports = {
 
   options: {
     commands: {
+      description: "Command(s) to run",
       required: true,
       type: 'textarea'
     },
     timeout: {
+      description: "Timeout (in seconds)",
       required: true,
       type: 'text',
       default: 600 // 10 minutes
