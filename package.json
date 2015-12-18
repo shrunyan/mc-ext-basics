@@ -8,10 +8,9 @@
   },
   "author": "",
   "license": "MIT",
-  "dependencies": {
-    "mc-extension-validator": "*"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "mc-extension-validator": "*",
     "tape": "^4.2.2",
     "tap-spec": "^4.1.1"
   }
