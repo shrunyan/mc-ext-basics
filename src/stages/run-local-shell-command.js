@@ -5,17 +5,20 @@ let ShellCommandLog = require('../logs/shell-command').ShellCommandLog
 
 module.exports = {
 
-  name: 'run_local_shell_command',
-  description: 'Run Local Shell Command(s)',
+  id: 'run_local_shell_command',
+  name: 'Run Local Shell Command(s)',
+  description: 'Runs one or more commands in the local shell environment.',
   icon: '/extensions/mc/basics/icons/run_local_shell_command.svg',
 
   options: {
     commands: {
+      name: 'Command(s)',
       description: "Command(s) to run",
       required: true,
       type: 'textarea'
     },
     timeout: {
+      name: 'Timeout',
       description: "Timeout (in seconds)",
       required: true,
       type: 'text',
