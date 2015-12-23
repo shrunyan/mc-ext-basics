@@ -16,6 +16,10 @@ module.exports = {
 
   _convertColorCodes: function(content) {
 
+    if (!content) {
+      return content
+    }
+
     let replacementDictionary = {
       '[1;30m': '<span class="black">',
       '[1;31m': '<span class="red">',
