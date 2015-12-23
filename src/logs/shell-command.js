@@ -6,14 +6,11 @@ module.exports = {
   name: 'Shell Command Log',
   description: 'Easily logs and formats output for a log made from shell execution',
 
-  generate: function(title, stdout, stderr, exitCode) {
+  generate: function(stdout, stderr, exitCode) {
     return {
-      title: title,
-      data:  {
-        stdout: stdout,
-        stderr: stderr,
-        exitCode: exitCode
-      }
+      stdout: stdout,
+      stderr: stderr,
+      exitCode: exitCode
     }
   },
 
