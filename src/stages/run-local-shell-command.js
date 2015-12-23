@@ -1,7 +1,7 @@
 'use strict'
 
 let exec = require('child_process').exec
-let ShellCommandLog = require('../logs/shell-command').ShellCommandLog
+let shellCommandLog = require('../logs/shell-command')
 
 module.exports = {
 
@@ -37,7 +37,11 @@ module.exports = {
 
       let exitCode = (err !== null) ? err.code : 0
 
-      stage.log(new ShellCommandLog('Local shell command execution completed.', stdout, stderr, exitCode))
+      // Old syntax
+      //stage.log(new ShellCommandLog('Local shell command execution completed.', stdout, stderr, exitCode))
+
+      // New syntax
+      stage.log(shellCommandLog.generate('Local shell command execution completed.', stdout, stderr, exitCode))
 
       if (err !== null) {
         stage.fail()
