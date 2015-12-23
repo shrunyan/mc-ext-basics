@@ -37,11 +37,7 @@ module.exports = {
 
       let exitCode = (err !== null) ? err.code : 0
 
-      // Old syntax
-      //stage.log(new ShellCommandLog('Local shell command execution completed.', stdout, stderr, exitCode))
-
-      // New syntax
-      stage.log(shellCommandLog.generate('Local shell command execution completed.', stdout, stderr, exitCode))
+      stage.log('mc.basics.logs.shell_command', 'Local shell command execution completed.', [stdout, stderr, exitCode])
 
       if (err !== null) {
         stage.fail()
