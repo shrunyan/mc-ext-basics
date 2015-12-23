@@ -8,7 +8,6 @@ module.exports = {
 
   generate: function(title, stdout, stderr, exitCode) {
     return {
-      type: 'FQID',
       title: title,
       data:  {
         stdout: stdout,
