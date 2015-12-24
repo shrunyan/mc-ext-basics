@@ -1,13 +1,19 @@
 'use strict'
 
-module.exports.SnippetLog = class SnippetLog {
+module.exports = {
 
-  constructor(title, snippetContents) {
-    this.type = 'snippet'
-    this.title = title
-    this.data = {
-      snippet: snippetContents
+  id: 'snippet',
+  name: 'Snippet Log',
+  description: 'Renders a monospaced snippet block',
+
+  generate: function(snippetContent) {
+    return {
+      snippet: snippetContent
     }
+  },
+
+  renderDetails: function(data) {
+    return '<pre>' + data.snippet + '</pre>'
   }
 
 }
