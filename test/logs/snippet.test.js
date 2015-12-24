@@ -1,7 +1,7 @@
 'use strict'
 
 let test = require('tape')
-let SnippetLog = require('../../src/logs/snippet').SnippetLog
+let SnippetLog = require('../../src/logs/snippet')
 
 //let extension = require('../index')
 //let extensionValidator = require('mc-extension-tests')
@@ -10,10 +10,9 @@ let SnippetLog = require('../../src/logs/snippet').SnippetLog
 
 test('Test log object translates properties as expected', function(t) {
 
-  let log = new SnippetLog('Title', 'example snippet contents')
+  let log = SnippetLog.generate('example snippet contents')
 
-  t.equal(log.title, 'Title', 'log title property should equal title passed as argument')
-  t.equal(log.data.snippet, 'example snippet contents', 'log data property should contain snippet contents as property')
+  t.equal(log.snippet, 'example snippet contents', 'log data should equal content passed as argument')
 
   t.end()
 })
