@@ -15,4 +15,5 @@ test('Test log object translates properties as expected', function(t) {
   t.equal(log.snippet, 'example snippet contents', 'log data should equal content passed as argument')
 
   t.end()
+
 })
