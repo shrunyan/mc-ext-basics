@@ -26,6 +26,18 @@ module.exports = {
     }
   },
 
+  outputs: {
+    stdout: {
+      description: 'Output from command'
+    },
+    stderr: {
+      description: 'Error output from command'
+    },
+    exit_code: {
+      description: 'Exit code after execution'
+    }
+  },
+
   execute: function(stage) {
 
     let commands = stage.option('commands')
@@ -42,6 +54,11 @@ module.exports = {
       if (err !== null) {
         stage.fail()
       } else {
+        stage.output({
+          stdout: stdout,
+          stderr: stderr,
+          exit_code: exitCode
+        })
         stage.succeed()
       }
 
