@@ -44,6 +44,7 @@ module.exports = {
     let timeout = stage.option('timeout') * 1000 // convert seconds to milliseconds
 
     stage.log('Running shell command')
+    stage.running()
 
     exec(commands, {timeout: timeout}, function (err, stdout, stderr) {
 
