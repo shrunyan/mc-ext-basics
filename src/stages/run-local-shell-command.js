@@ -1,5 +1,8 @@
 'use strict'
 
+// 15.36MB
+const MAX_BUFFER = 15000 * 1024
+
 let exec = require('child_process').exec
 let shellCommandLog = require('../logs/shell-command')
 
@@ -45,7 +48,10 @@ module.exports = {
 
     stage.log('Running shell command')
 
-    exec(commands, {timeout: timeout}, function (err, stdout, stderr) {
+    exec(commands, {
+    	timeout: timeout,
+    	maxBuffer: MAX_BUFFER
+    }, function (err, stdout, stderr) {
 
       let exitCode = (err !== null) ? err.code : 0
 
